@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.10)
+project(KVStorageTest)
+
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+add_executable(
+    kvstorage_tests
+    test.cpp
+    main2.cpp  
+)
+
+target_link_libraries(kvstorage_tests ${GTEST_LIBRARIES} pthread)
